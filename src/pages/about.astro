@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, SOCIALS } from '../consts';
+---
+
+<Base title="About" description={`About ${SITE.author}.`}>
+  <article class="post">
+    <header class="post-header">
+      <h1>About</h1>
+    </header>
+    <div class="prose">
+      <!-- ✏️ Replace with your story. Keep it short and specific. -->
+      <p>
+        I'm {SITE.author}. I build software for a living and write here to think out loud.
+        This site is where I publish opinions, engineering notes, and small proofs-of-concept.
+      </p>
+
+      <h2>What I work on</h2>
+      <ul>
+        <li>Your current role / domain (e.g. platform engineering, CRM, data)</li>
+        <li>Two or three technologies you're known for</li>
+        <li>What you're exploring right now</li>
+      </ul>
+
+      <h2>Now</h2>
+      <p>What you're focused on this month. Update it every few weeks — it keeps the site feeling alive.</p>
+
+      <h2>Get in touch</h2>
+      <p>
+        The best way to reach me is
+        {SOCIALS.email && <a href={SOCIALS.email}>email</a>}
+        {SOCIALS.linkedin && <> or <a href={SOCIALS.linkedin} rel="me noopener">LinkedIn</a></>}.
+        Code lives on {SOCIALS.github && <a href={SOCIALS.github} rel="me noopener">GitHub</a>}.
+      </p>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,24 @@
+---
+import { SITE, SOCIALS } from '../consts';
+const links = [
+  { label: 'GitHub', href: SOCIALS.github },
+  { label: 'LinkedIn', href: SOCIALS.linkedin },
+  { label: 'X', href: SOCIALS.x },
+  { label: 'Email', href: SOCIALS.email },
+  { label: 'RSS', href: '/rss.xml' },
+].filter((l) => l.href);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© {year} {SITE.author}. Words are mine; code is MIT unless noted.</p>
+    <ul class="footer-links">
+      {links.map((l) => (
+        <li>
+          <a href={l.href} rel={l.href.startsWith('http') ? 'me noopener' : undefined}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

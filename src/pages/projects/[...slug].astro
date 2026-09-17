@@ -1,0 +1,40 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CopyCode from '../../components/CopyCode.astro';
+import { getProjects, formatDate } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const items = await getProjects();
+  return items.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, summary, date, stack, status, repo, demo } = project.data;
+---
+
+<Base title={title} description={summary} type="article" publishedTime={date}>
+  <article class="post">
+    <header class="post-header">
+      <p class="eyebrow"><a href="/projects">← All projects</a></p>
+      <h1>{title}</h1>
+      <p class="lede">{summary}</p>
+      <p class="post-meta">
+        <span class={`status status-${status}`}>{status}</span>
+        <span> · {formatDate(date)}</span>
+      </p>
+      <ul class="chips">{stack.map((s) => <li>{s}</li>)}</ul>
+      {(repo || demo) && (
+        <p class="actions">
+          {repo && <a class="btn" href={repo} rel="noopener">View code ↗</a>}
+          {demo && <a class="btn btn-ghost" href={demo} rel="noopener">Live demo ↗</a>}
+        </p>
+      )}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+  <CopyCode />
+</Base>

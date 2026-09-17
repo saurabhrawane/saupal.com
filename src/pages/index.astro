@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { SITE, SOCIALS } from '../consts';
+import { getPosts, getProjects } from '../lib/content';
+
+const posts = (await getPosts()).slice(0, 5);
+const projects = (await getProjects()).slice(0, 4);
+---
+
+<Base>
+  <section class="hero">
+    <p class="eyebrow">Hi, I'm {SITE.author} 👋</p>
+    <h1>{SITE.tagline}</h1>
+    <p class="lede">
+      This is my corner of the internet: long-form notes on engineering and ideas, plus
+      small proofs-of-concept with the code attached so you can run them yourself.
+    </p>
+    <p class="actions">
+      <a class="btn" href="/blog">Read the writing</a>
+      <a class="btn btn-ghost" href="/projects">See the projects</a>
+      {SOCIALS.github && <a class="btn btn-ghost" href={SOCIALS.github} rel="me noopener">GitHub ↗</a>}
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Latest writing</h2>
+      <a href="/blog">All posts →</a>
+    </div>
+    <PostList posts={posts} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Projects &amp; POCs</h2>
+      <a href="/projects">All projects →</a>
+    </div>
+    <div class="grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+</Base>

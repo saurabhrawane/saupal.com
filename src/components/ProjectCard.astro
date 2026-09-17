@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+const { project } = Astro.props;
+const { title, summary, stack, status, repo, demo } = project.data;
+---
+
+<article class="card">
+  <div class="card-top">
+    <span class={`status status-${status}`}>{status}</span>
+  </div>
+  <h3><a href={`/projects/${project.id}/`} class="stretched">{title}</a></h3>
+  <p>{summary}</p>
+  <ul class="chips" aria-label="Tech stack">
+    {stack.map((s) => <li>{s}</li>)}
+  </ul>
+  {(repo || demo) && (
+    <div class="card-links">
+      {repo && <a href={repo} rel="noopener">Code ↗</a>}
+      {demo && <a href={demo} rel="noopener">Live demo ↗</a>}
+    </div>
+  )}
+</article>
