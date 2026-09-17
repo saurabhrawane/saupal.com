@@ -20,8 +20,7 @@ export const NAV = [
 
 // Leave a URL empty ('') to hide that link.
 export const SOCIALS = {
-  github: 'https://github.com/your-username',
-  linkedin: 'https://www.linkedin.com/in/your-handle',
-  x: '',
+  github: 'https://github.com/saurabhrawane',
+  linkedin: 'https://www.linkedin.com/in/saurabhrawane/',
   email: 'mailto:hello@saupal.com',
 };
