@@ -56,4 +56,4 @@ Force.com made us builders, Visualforce made us designers, and Sites made us pub
 
 I'm excited, and I haven't felt this way about a Salesforce launch in a long time. 
 
-**The next twenty years start now.**
+**The next ten or more years start now.**
