@@ -165,3 +165,5 @@ The override itself becomes useful data. If reps keep overriding the same signal
 A skill that judges whether a deal is healthy needs Renewal, Expansion, and Downsell already separated. Without that, it's pattern-matching on a blended number and guessing at what's driving the movement. Once the data model tells the truth at the line level, the skill's job gets simpler: read the signals, apply the team's chosen logic, and say the quiet part, the why, out loud.
 
 The forecast call was always going to involve judgment. The goal isn't to remove it. It's to make the judgment visible, consistent, and something a whole team can get better at together, instead of a skill that walks out the door every time a good rep leaves.
+
+Next in the series: Part 3 walks through building this skill step by step, with a sample file you can adapt to your own Salesforce org.
