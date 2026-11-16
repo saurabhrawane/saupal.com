@@ -4,7 +4,7 @@ description: "Part 3: a single Markdown file that reads a Salesforce opportunity
 pubDate: 2026-10-26
 tags: ["salesforce", "forecasting", "ai", "skills"]
 ---
-
+> **TL;DR:** This is a walkthrough of a starter skill file that reads only Salesforce data. Map your fields, set the team’s thresholds, and rate each signal Green, Amber, or Red. Plain-language rules then turn those ratings into Commit, Best Case, Pipeline, or Omitted. One deal can get two different calls, one per owner. The defaults are untested guesses, so tune them against your own closed deals.
 Part 3 of a series. [Part 1](/blog/forecasting-renewals-expansion-downsell/) covered how to structure a renewal opportunity into Renewal, Expansion, and Downsell ACV. Part 2 covered how a defined skill turns deal signals into a weekly forecast call. This part shows how to build that skill.
 
 ## Where we left off
