@@ -4,6 +4,7 @@ description: "A two-part series on renewal forecasting: a data model where every
 pubDate: 2026-10-26
 tags: ["salesforce", "forecasting", "revenue", "ai"]
 ---
+> **TL;DR:** A renewal opportunity is rarely one number. Convert every line to annual contract value (transaction value ÷ term × 365), fix last year’s ACV as an immutable renewal baseline, and classify the rest as expansion or downsell. At the header, Net ACV = Renewal + Expansion − Downsell, and each piece gets its own owner: the renewal specialist, the expansion specialist, and an MVP driving the deal.
 
 A two-part series. Part 1 covers the data model: what the numbers on a renewal opportunity should mean. Part 2 covers the weekly process: how a rep, with a Claude skill alongside, turns those numbers and other signals into a forecast call.
 
