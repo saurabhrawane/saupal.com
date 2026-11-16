@@ -4,7 +4,7 @@ description: "Part 2: how an SDR agent works the leads that never clear the bar 
 pubDate: 2026-11-03
 tags: ["ai", "demand-generation", "crm", "sales"]
 ---
-
+> **TL;DR:** The leads below the handoff bar usually get no attention at all, and an SDR agent can work them. Its job is to collect evidence (the PACT attributes), not to book meetings. It sends each lead to a rep, to a prepared cart, or back to nurture, and hands off to a human on defined triggers. Test it against a holdout group so you compare the agent with doing nothing.
 Part 2 of a series. [Part 1](/blog/before-the-handoff-ai-lead-development/) followed a lead from its first touch to the front door of the CRM: capture, enrich, score, nurture, hand off. This part goes inside the CRM and follows the SDR agent.
 
 ## The leads nobody was ever going to call
