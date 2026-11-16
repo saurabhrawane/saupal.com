@@ -4,7 +4,7 @@ description: "Part 1: the five steps a lead passes through before it reaches the
 pubDate: 2026-11-01
 tags: ["ai", "demand-generation", "crm", "sales"]
 ---
-
+> **TL;DR:** Most lead development now happens before a lead reaches the CRM: capture, enrich, score, nurture, hand off. AI handles the high-volume work at each step, while people set the rules and the handoff bar. Leads that aren’t ready keep getting nurtured, and those that don’t convert come back to nurture instead of being dropped.
 A two-part series. Part 1 follows a lead from its first touch to the front door of the CRM and shows where AI now does work that people used to do by hand. Part 2 goes inside the CRM and follows the SDR agent.
 
 ## Part 1: The work that happens before anyone picks up the phone
