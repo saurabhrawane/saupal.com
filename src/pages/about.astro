@@ -1,37 +1,132 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE, SOCIALS } from '../consts';
+import { SOCIALS } from '../consts';
+
+const skills = [
+  'Enterprise & business architecture',
+  'Agentic AI architecture & LLMOps',
+  'AI governance & agent security',
+  'Salesforce, CPQ & commerce',
+  'Quote-to-cash & revenue recognition',
+  'Sales planning & forecasting',
+  'MDM, CDP & Snowflake',
+  'Integration, APIs & event-driven design',
+  'Architecture review & standards',
+];
 ---
 
-<Base title="About" description={`About ${SITE.author}.`}>
+<Base
+  title="About"
+  description="Saurabh Rawane is an enterprise architect who designs the systems companies use to sell, bill and recognize revenue, and the AI agents that now work inside them."
+>
   <article class="post">
     <header class="post-header">
-      <h1>About</h1>
+      <p class="eyebrow">About</p>
+      <h1>Hi, I'm Saurabh.</h1>
+      <p class="lede">
+        I design the systems companies use to sell, bill and recognize revenue, and lately the AI
+        agents that work inside them.
+      </p>
     </header>
+
     <div class="prose">
-      <!-- ✏️ Replace with your story. Keep it short and specific. -->
       <p>
-        I'm {SITE.author}. I build software for a living and write here to think out loud.
-        This site is where I publish opinions, engineering notes, and small proofs-of-concept.
+        I'm an enterprise architect in the San Francisco Bay Area with a little over 20 years in
+        go-to-market and finance systems: CRM, CPQ, commerce, marketing, customer success,
+        quote-to-cash, revenue recognition and sales planning. For the last 15 of those years I've
+        been at Autodesk, where I'm Chief Architect for GTM Platforms.
+      </p>
+      <p>
+        My work sits where business models meet systems. When a company changes how it sells, the
+        CRM, the quoting engine, billing and the revenue ledger all have to change with it, and
+        still agree with each other afterwards. That is the problem I keep coming back to, and it is
+        what most of this blog is about.
       </p>
 
-      <h2>What I work on</h2>
+      <h2>What I'm working on now</h2>
+      <p>
+        Bringing AI agents into the revenue stack in a way an enterprise can trust. I lead the
+        agentic AI work across Autodesk's GTM systems: agents for pipeline intelligence, account
+        planning, forecasting and operations. The hard part is rarely the model. It is the platform
+        around it: secure data access, evaluation, and a path from pilot to production that
+        governance can sign off on.
+      </p>
+      <p>
+        I also lead the enterprise strategy for integrating acquisitions across our marketing and
+        CRM stacks: deciding what to consolidate and what to keep, and bringing customer, pipeline
+        and revenue data together without disrupting the business that was just acquired.
+      </p>
+
+      <h2>Highlights</h2>
       <ul>
-           <li>GTM systems domain expert</li>
-<li>Salesforce and CRM architecture</li>
-           <li>Apex, LWC, integrations</li>
-           <li>Exploring AI agents</li>
-            <li>CRM Domain Expert  </li>
+        <li>
+          <strong>Three business model transitions.</strong> Architected quote-to-cash and revenue
+          recognition through Autodesk's moves from perpetual licenses to subscription, then Flex
+          consumption, then a direct transaction model, keeping bookings, billing and revenue
+          reconciled across Sales and Finance.
+        </li>
+        <li>
+          <strong>AI agents in production.</strong> Built a governed agent platform with tool
+          orchestration, secure data access, evaluation and LLMOps, and shipped a touchless
+          order-conversion agent on Salesforce Agentforce.
+        </li>
+        <li>
+          <strong>Architecture at scale.</strong> Chair the Architecture Review Board for 15+
+          engineering teams across 8 domains, and lead a community of 20 solution leads, for systems
+          serving 3,000+ sellers, 20,000+ partners and $7B in annual revenue.
+        </li>
+        <li>
+          <strong>Planning from one source of truth.</strong> Architected quota, account planning
+          and forecasting on a single governed data foundation, shortening the planning cycle by a
+          full quarter.
+        </li>
+        <li>
+          <strong>AI before it was called that.</strong> Machine-learning case routing in Salesforce
+          Omni-Channel and a Watson-powered support chatbot, years before LLMs.
+        </li>
+        <li>
+          <strong>Where it started.</strong> Force.com architect with Salesforce Professional
+          Services, and technical lead for the Dreamforce portal from 2009 to 2011. Spoke at
+          Dreamforce in 2010 and 2014.
+        </li>
       </ul>
 
-      
+      <h2>What I write about</h2>
+      <ul>
+        <li><strong>AI agents in go-to-market:</strong> <a href="/blog/before-the-handoff-ai-lead-development/">Before the Handoff</a> and <a href="/blog/below-the-line-ai-sdr-agent/">Below the Line</a></li>
+        <li><strong>Revenue and forecasting data models:</strong> <a href="/blog/forecasting-renewals-expansion-downsell/">One Deal, Three Stories</a> and <a href="/blog/build-the-forecast-call-skill/">Build the Forecast Call</a></li>
+        <li><strong>Architecture decisions:</strong> <a href="/blog/build-vs-buy-five-questions/">Build vs Buy</a></li>
+        <li><strong>The Salesforce platform:</strong> <a href="/blog/aiforce-is-our-force-com-moment/">AIforce Is Our Force.com Moment</a></li>
+      </ul>
+    </div>
+
+    <section class="about-skills">
+      <h2>Skills</h2>
+      <ul class="chips">
+        {skills.map((s) => <li>{s}</li>)}
+      </ul>
+    </section>
+
+    <div class="prose about-contact">
       <h2>Get in touch</h2>
       <p>
-        The best way to reach me is
-        {SOCIALS.email && <a href={SOCIALS.email}>email</a>}
-        {SOCIALS.linkedin && <> or <a href={SOCIALS.linkedin} rel="me noopener">LinkedIn</a></>}.
-        Code lives on {SOCIALS.github && <a href={SOCIALS.github} rel="me noopener">GitHub</a>}.
+        I'm always glad to compare notes on GTM architecture, revenue systems, or getting AI agents
+        into production.
+        The best way to reach me is {SOCIALS.linkedin && <a href={SOCIALS.linkedin} rel="me noopener">LinkedIn</a>}{SOCIALS.email && <> or <a href={SOCIALS.email}>email</a></>}.
       </p>
+      <p class="muted"><small>Views on this site are my own and don't represent my employer.</small></p>
     </div>
   </article>
 </Base>
+
+<style>
+  .about-skills {
+    margin-top: 2.2em;
+  }
+  .about-skills h2 {
+    margin-bottom: 0.25em;
+  }
+  .about-contact {
+    margin-top: 2.2em;
+  }
+</style>
